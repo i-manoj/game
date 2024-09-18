@@ -15,7 +15,7 @@ function Login({ setUser }) {
         console.log("Attempting login with", { username, password });
         
         try {
-            const res = await axios.post('game-back-production-a4cf.up.railway.app/api/users/login',
+            const res = await axios.post('https://game-back-production-a4cf.up.railway.app/api/users/login',
                 { username, password },
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );

@@ -14,7 +14,7 @@
 //         // Fetch user data (high score and past scores)
 //         const fetchUserData = async () => {
 //             try {
-//                 const res = await axios.get(`game-back-production-a4cf.up.railway.app/api/users/${user._id}`);
+//                 const res = await axios.get(`https://game-back-production-a4cf.up.railway.app/api/users/${user._id}`);
 //                 setHighScore(res.data.highScore);
 //                 setScores(res.data.scores);
 //             } catch (error) {
@@ -37,7 +37,7 @@
 //                 setTimeout(() => setIsConfetti(false), 5000);  // Confetti for 5 seconds
 
 //                 // Update high score in the backend
-//                 await axios.post(`game-back-production-a4cf.up.railway.app/api/users/${user._id}/highscore`, { highScore: newScore });
+//                 await axios.post(`https://game-back-production-a4cf.up.railway.app/api/users/${user._id}/highscore`, { highScore: newScore });
 //             }
 
 //             setTarget(Math.floor(Math.random() * 10));  // New target
@@ -46,7 +46,7 @@
 //         }
 
 //         // Save the current score in the backend
-//         await axios.post(`game-back-production-a4cf.up.railway.app/api/users/${user._id}/score`, { score });
+//         await axios.post(`https://game-back-production-a4cf.up.railway.app/api/users/${user._id}/score`, { score });
 //     };
 
 //     return (
@@ -87,7 +87,7 @@
 //     useEffect(() => {
 //         const fetchUserData = async () => {
 //             try {
-//                 const res = await axios.get(`game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
+//                 const res = await axios.get(`https://game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
 //                 setHighScore(res.data.highScore);
 //                 setScores(res.data.scores);
 //             } catch (error) {
@@ -113,7 +113,7 @@
     
 //                 try {
 //                     // Update high score in the backend
-//                     const res = await axios.put(`game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
+//                     const res = await axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
 //                         { highScore: newScore },
 //                         { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } }
 //                     );
@@ -153,7 +153,7 @@
     
 //         try {
 //             // Save the current score in the backend
-//             await axios.put(`game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
+//             await axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
 //                 { score },
 //                 { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } }
 //             );
@@ -215,7 +215,7 @@
 //     useEffect(() => {
 //         const fetchUserData = async () => {
 //             try {
-//                 const res = await axios.get(`game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
+//                 const res = await axios.get(`https://game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
 //                 setHighScore(res.data.highScore);
 //                 setScores(res.data.scores);
 //             } catch (error) {
@@ -240,7 +240,7 @@
 
 //                 try {
 //                     // Update high score in the backend
-//                     const res = await axios.put(`game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
+//                     const res = await axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
 //                         { highScore: newScore },
 //                         { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json' } }
 //                     );
@@ -276,7 +276,7 @@
 
 //         try {
 //             // Save the current score in the backend
-//             const res = await axios.put(`game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
+//             const res = await axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
 //                 { score },
 //                 { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json' } }
 //             );
@@ -349,7 +349,7 @@ function Game({ user }) {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const res = await axios.get(`game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
+                const res = await axios.get(`https://game-back-production-a4cf.up.railway.app/api/users/getScores/${user._id}`);
                 setHighScore(res.data.highScore);
                 setScores(res.data.scores);
             } catch (error) {
@@ -383,7 +383,7 @@ function Game({ user }) {
                     setTimeout(() => setIsConfetti(false), 5000);  // Show confetti for 5 seconds
     
                     // Update high score on the backend
-                    axios.put(`game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
+                    axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/updateHighScore/${user._id}`, 
                         { highScore: newScore },
                         { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json' } }
                     ).then(res => {
@@ -410,7 +410,7 @@ function Game({ user }) {
                 }
     
                 // Save the new score to the backend
-                axios.put(`game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
+                axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
                     { score: newScore }, 
                     { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json' } }
                 ).then(res => {
@@ -444,7 +444,7 @@ function Game({ user }) {
                 console.log("New Score (Incorrect): ", newScore);
     
                 // Save the new score to the backend
-                axios.put(`game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
+                axios.put(`https://game-back-production-a4cf.up.railway.app/api/users/saveScore/${user._id}`, 
                     { score: newScore }, 
                     { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json' } }
                 ).then(res => {

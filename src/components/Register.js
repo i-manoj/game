@@ -40,7 +40,7 @@ function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.post('game-back-production-a4cf.up.railway.app/api/users/register', { username, password });
+            let res = await axios.post('https://game-back-production-a4cf.up.railway.app/api/users/register', { username, password });
             if(res.data.code===400){
                 toast.error(res.data.message, {
                     position: "top-center",

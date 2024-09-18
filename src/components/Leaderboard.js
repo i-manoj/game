@@ -45,7 +45,7 @@ function Leaderboard() {
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {
-                const res = await axios.get('game-back-production-a4cf.up.railway.app/api/users/getHighScores');
+                const res = await axios.get('https://game-back-production-a4cf.up.railway.app/api/users/getHighScores');
                 console.log("Leaderboard response", res);
         
                 if(res.data.code === 400) {
