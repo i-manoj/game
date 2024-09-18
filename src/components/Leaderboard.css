@@ -1,0 +1,76 @@
+/* Leaderboard.css */
+
+.leaderboard-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f06, #ffeb3b);  /* Same background as the other pages */
+    font-family: 'Arial', sans-serif;
+}
+
+.leaderboard-container {
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background for contrast */
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    color: #fff;
+}
+
+.leaderboard-container h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-item:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player-rank {
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.player-name {
+    font-size: 1.2rem;
+}
+
+.player-score {
+    font-size: 1.1rem;
+    color: #f06;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.leaderboard-container {
+    animation: slideIn 1s ease-in-out;
+}
