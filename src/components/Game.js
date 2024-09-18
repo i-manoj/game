@@ -344,7 +344,6 @@ function Game({ user }) {
     const [highScore, setHighScore] = useState(user.highScore || 0);
     const [scores, setScores] = useState([]);
     const [guess, setGuess] = useState('');
-    const [target, setTarget] = useState(Math.floor(Math.random() * 10));
     const [isConfetti, setIsConfetti] = useState(false);
 
     useEffect(() => {
